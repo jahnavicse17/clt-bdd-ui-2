@@ -21,4 +21,13 @@ module.exports = function ()
         await driver.sleep(3000);
         return;
     });
+
+    this.When(/^there are no inputs entered$/, async function (table) {
+        const fields = table.rows();
+        for (i = 0; i < fields.length; i++) {
+            page.smartSubmissions.inputElement(fields[i][0], fields[i][1]);
+        }; 
+        await driver.sleep(3000);
+        return;
+    });
 };
