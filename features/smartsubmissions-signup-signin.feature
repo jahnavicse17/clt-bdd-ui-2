@@ -45,13 +45,13 @@ Feature: As a customer, I want to able to navigate to Smart Submissions website 
     Given I am on the "SignUpLink" Page
     And I click on "JobSeeker"
     When I enter the inputs
-      | InputName  | InputValue          |
-      | FirstName  | Jahnavi1234         |
-      | LastName   | Som1234             |
-      | Email      | JahSom123@gmail.com |
-      | MobileNo   | 0123456789          |
-      | Password   | yashbash121@1234    |
-      | ConfirmPwd | yashbash121@1234    |
+      | InputName  | InputValue|
+      | FirstName  | Janavi1234|
+      | LastName   | Sm1234|
+      | Email      | JhSom123@gmail.com|
+      | MobileNo   | 0123456789|
+      | Password   | yasbash121@1234|
+      | ConfirmPwd | yasbash121@1234|
     And I click on "AgreeTermsCheckBox"
     And I click on "RegisterBtn"
     Then I should see "RegisterSuccess"
