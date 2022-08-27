@@ -1,5 +1,7 @@
 const { assert } = require("chai");
 const helpers = require("../runtime/helpers");
+/*const ps=require("prompt-sync");
+const prompt=ps();  */
 
 /* eslint-disable no-undef */
 module.exports = {
@@ -69,17 +71,53 @@ module.exports = {
     clickElement: async function (objectKey) {
         // eslint-disable-next-line no-console
         var selector = page.smartSubmissions.elements[objectKey];
-        await driver.sleep(2000);
+        await driver.sleep(5000);
         return driver.findElement(By.xpath(selector)).click();
     },
-    inputElement: async function (name, val) {
-        var selector = page.smartSubmissions.elements[name];
+    inputElement: async function(name,val) {
+        var selector = page.smartSubmissions.elements[name]; 
         await driver.sleep(2000);
-        return driver.findElement(By.xpath(selector)).sendKeys(val);
+        return driver.findElement(selector).sendKeys(val);
+            },
+    inputElement1: async function(objKey1,objKey2,objKey3,objKey4,objKey5,objKey6,objKey7,objKey8) {
+        
+        var selector1 = page.smartSubmissions.elements[objKey1];        
+        //var accessCode = prompt("Enter your accessCode: ");
+        driver.findElement(By.xpath(selector1)).sendKeys("12345");
+        var selector2 = page.smartSubmissions.elements[objKey2];
+        //var companyName = prompt("Enter your companyName: ");
+        driver.findElement(By.xpath(selector2)).sendKeys("IBM");
+        var selector3 = page.smartSubmissions.elements[objKey3];
+        //var firstName = prompt("Enter your firstName: ");
+        driver.findElement(By.xpath(selector3)).sendKeys("Janu");
+        var selector4  = page.smartSubmissions.elements[objKey4];
+        //var lastName = prompt("Enter your lastName: ");
+        driver.findElement(By.xpath(selector4)).sendKeys("Som");
+        var selector5  = page.smartSubmissions.elements[objKey5];
+        //var email = prompt("Enter your email: ");
+        driver.findElement(By.xpath(selector5)).sendKeys("Janu@abc.com");
+        var selector6 = page.smartSubmissions.elements[objKey6];
+        //var mobileNo = prompt("Enter your mobileNo: ");
+        driver.findElement(By.xpath(selector6)).sendKeys("9898989898");
+        var selector7 = page.smartSubmissions.elements[objKey7];
+        //var password = prompt("Enter your password: ");
+        driver.findElement(By.xpath(selector7)).sendKeys("Janu@1234");        
+        var selector8 = page.smartSubmissions.elements[objKey8];
+        //var confirmPwd = prompt("Enter your confirmPwd: ");
+        driver.findElement(By.xpath(selector8)).sendKeys("Janu@1234");        
+        await driver.sleep(2000);
     },
+
     elementExists: async function (objectKey) {
         // eslint-disable-next-line no-console
         var selector = page.smartSubmissions.elements[objectKey];
+        await driver.sleep(5000);
+        return driver.findElement(By.xpath(selector));
+    },
+
+    elementExists1: async function(objKey1,objKey2,objKey3,objKey4,objKey5,objKey6,objKey7) {
+        // eslint-disable-next-line no-console
+        var selector = page.smartSubmissions.elements[objKey1,objKey2,objKey3,objKey4,objKey5,objKey6,objKey7];
         await driver.sleep(5000);
         return driver.findElement(By.xpath(selector));
     }

@@ -20,6 +20,6 @@ module.exports = function() {
     }).build();
 
     driver.manage().window().maximize();
-
+    
     return driver;
 };
