@@ -8,7 +8,13 @@ Feature: As a jootza customer, I want to be able to navigate to landing poage so
     When I enter username "Test"
     And I enter password "Test"
 
-
+  @jootza @jootzatest1
+  Scenario: Customer is displayed with jootza.com landing page
+    Given I am on the "Jootza" portal
+    When I click on "Login"
+    Then I should see "LoginHeader"
+    When I enter username "Test"
+    And I enter password "Test"
 
 @jootza @jootzaRegister
   Scenario: Customer is displayed with jootza.com landing page
