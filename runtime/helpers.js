@@ -69,7 +69,7 @@ module.exports = {
         }
 
         // grab matching elements
-        return driver.findElements(by.js(findElementsContainingText, cssSelector, textToMatch));
+        return driver.findElements(By.js(findElementsContainingText, cssSelector, textToMatch));
     },
 
     /**
@@ -231,7 +231,7 @@ module.exports = {
 
         // if the locator starts with '//' assume xpath, otherwise css
         //var selector = (elementSelector.indexOf('//') === 0) ? "xpath" : "css";
-        var selector = (elementSelector.indexOf('/') === 0) ? By.xpath(elementSelector) : by.css(elementSelector);
+        var selector = (elementSelector.indexOf('/') === 0) ? By.xpath(elementSelector) : By.css(elementSelector);
 
         // readable error message
         var timeoutMessage = 'The attribute still exists after ' + waitInMilliseconds + ' milliseconds';
@@ -261,11 +261,11 @@ module.exports = {
     */
     selectDropdownValueByVisibleText: async function (elementSelector, optionName) {
         var select = await helpers.waitForCssXpathElement(elementSelector);
-        var selectElements = await select.findElements({ css: 'option' });
+        var selectElements = await select.findElements({ css: 'li' }); //in 'li', 'option' need to keep for select tag
         var options = [];
 
-        for (var option of selectElements) {
-            options.push((await option.getText()).toUpperCase());
+        for (var li of selectElements) {
+        options.push((await li.getText()).toUpperCase());
         }
         optionName = optionName.toUpperCase();
 

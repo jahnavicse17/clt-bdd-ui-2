@@ -11,12 +11,10 @@ module.exports = {
     
     siteUrls: {
         PHPTravels: 'https://www.phptravels.net/'
-        //SignUpLink: 'https://www.smartsubmissions.com/signup',
-        //LoginLink: 'https://www.smartsubmissions.com/login'
+        
     },
 
     elements: {
-        //SignUpLink: '//div//button[text()="Sign Up"]',
         PHPTravelsLogo: '//div[@class="logo"]/a/img',
 
         Blog: '//ul[@class="nav nav-tabs gap-2 cms-pages"]//strong[text()="Blog"]',
@@ -28,6 +26,16 @@ module.exports = {
         invalidEmailErr: '//a[@class="newstext waves-effect"]/div[text()="Please add correct email!"]',
         existingEmailErr: '//a[@class="newstext waves-effect"]//div[text()="Email exist"]',
         subscribedMessage: '//a[@class="newstext waves-effect"]//div[text()="Thank you for subscription"]',
+
+        Offers: '//ul[@class="nav nav-tabs gap-2 cms-pages"]//strong[text()="Offers"]',
+        AboutUs: '//li/a/small[text()="About Us"]',
+        TermsOfUse: '//li/a/small[text()="Terms of Use"]',
+        TermsOfUseHeader: '//div/h3[@class="title stroke-shape"]',
+        FAQ: '//li/a/small[text()="FAQ"]',
+        FAQHeader: '//div/h3[@class="title stroke-shape"]',
+        HowToBook: '//li/a/small[text()="How to Book"]',
+        HowToBookHeader: '//div/h3[@class="title stroke-shape"]',
+
     },
 
     content: {
