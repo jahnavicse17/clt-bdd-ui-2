@@ -15,6 +15,7 @@ var expect = require('chai').expect;
 var assert = require('chai').assert;
 var reporter = require('cucumber-html-reporter');
 var cucumberJunit = require('cucumber-junit');
+//var robot = require('robotjs');
 
 // Initialize the eyes SDK and set your private API key.
 var Eyes = require('eyes.selenium').Eyes;

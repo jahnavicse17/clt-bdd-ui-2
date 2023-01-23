@@ -28,8 +28,8 @@ module.exports = {
         IndianCurrency: '//a[@href="https://phptravels.net/currency-INR"]',
         CurrencyHeader: '//h2/strong[text()=" Let’s book your next trip!"]',
 
-        HeaderText1: '//*[@id="fadein"]/section[1]/div/div/div/div/div[2]/div[1]/h2',
-        HeaderText: '#fadein > section.hero-wrappe > div > div > div > div > div.section-tab.fade-in > div.d-none.d-sm-block.d-lg-block.d-xl-block > h2',
+        HeaderText: '//*[@id="fadein"]/section[1]/div/div/div/div/div[2]/div[1]/h2',
+        //HeaderText: '#fadein > section.hero-wrappe > div > div > div > div > div.section-tab.fade-in > div.d-none.d-sm-block.d-lg-block.d-xl-block > h2',
 
     },
 
@@ -54,8 +54,8 @@ module.exports = {
         await driver.sleep(3000);
         var elementSelector = page.phpTravelsHeader.elements['ListOfLang'];
         await driver.sleep(3000);
-        //var optionName = page.phpTravelsHeader.content['Russian'];
-       // return helpers.selectDropdownValueByVisibleText(elementSelector,"Russian");
+        var optionName = page.phpTravelsHeader.content['Russian'];
+       //return helpers.selectDropdownValueByVisibleText(elementSelector,"Russian");
         return helpers.selectDropdownValueByVisibleText(elementSelector, optionName);
 
     },
@@ -116,11 +116,24 @@ module.exports = {
 
     elementExists2: function (obj1) {
         // eslint-disable-next-line no-console
-        var selector = page.phpTravelsHeader.elements[obj1];
-        var str=driver.findElement(By.css(selector)).getAttribute("class");
-       console.log("Value: "+str);
+        var selector = this.elements[obj1];
+        //var selector = page.phpTravelsHeader.elements[obj1];
+        //driver.findElement(By.css(selector)).getText().then(async function (text1){
+       driver.findElement(By.xpath(selector)).getAttribute('class').then(async function (text1)
+       {
+            //textOfElement = text1;
+            await console.log("Value: "+text1);
+            //var str="Let’s book1 your next trip!";
+            var str1="pb-1";
+            assert.equal(str1,text1);
+        },async function (err1){
+            await console.log('ERROR: ' + err1);    
+        });
+        //console.log("Value: "+result);
+        //assert.equal("Let’s book your next trip!",result);
+       
        //var str = helpers.getAttributeValue(selector, "class");
-       assert.equal("pb-1",str);
+       
        //await driver.sleep(5000);        
         //assert.equal(" Let’s book your next trip!", sel1.getText());
         //await driver.sleep(3000);

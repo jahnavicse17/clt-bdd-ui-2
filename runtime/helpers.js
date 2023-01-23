@@ -287,7 +287,6 @@ module.exports = {
         for (var i = 0; i < timeout; i += 1000) {
             windows = await driver.getAllWindowHandles(); // procura por todas as windows abertas
             if (windows.length > 1) return windows;
-
             await driver.sleep(1000);
         }
     },

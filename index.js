@@ -7,6 +7,7 @@ var path = require('path');
 var program = require('commander');
 var pjson = require('./package.json');
 var cucumber = require('cucumber');
+//var robot = require('robotjs');
 
 function collectPaths(value, paths) {
     paths.push(value);
