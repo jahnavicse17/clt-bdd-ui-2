@@ -118,7 +118,9 @@ module.exports = {
         // eslint-disable-next-line no-console
         var selector = this.elements[obj1];
         //var selector = page.phpTravelsHeader.elements[obj1];
-        //driver.findElement(By.css(selector)).getText().then(async function (text1){
+        /*driver.findElement(By.css(selector)).getText().then(async function (text1){
+            assert.equal("pb-1",text1);
+    } */
        driver.findElement(By.xpath(selector)).getAttribute('class').then(async function (text1)
        {
             //textOfElement = text1;

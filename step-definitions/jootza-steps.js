@@ -11,7 +11,7 @@ module.exports = function ()
         return page.jootza.clickElement(objectKey);
     });
 
-    this.When(/^I enter username "([^"]*)"$/ , function(objKey1) {
+    this.When(/^I enter username "([^"]*)"$/, function(objKey1) {
         return page.jootza.inputUserName(objKey1);
     });
 
